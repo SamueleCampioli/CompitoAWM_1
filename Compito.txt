@@ -1,0 +1,13 @@
+idee:
+	per le stanze, creare un nuovo model collegato con le singole capabilities
+	in modo one-to-many (tramite foreignkey)
+	creare una view parallela a nodes in cui abbiamo la stessa visualizzazione
+	ma al posto dei nodi le stanze, con la possibilità di aggiungere, eliminare
+	o editare le stanze. L'edit della stanza permette di vedere le capabilities
+	della singola stanza con la possibilità di rimuoverle o aggiungerle.
+	Le capabilities di default sono "Uncategorize" (se la foreign key lo permette,
+	altrimenti creare una stanza chiamata Uncategorize e renderla invisibile
+	nella schermata di visione delle stanze). sarebbe carino un menù a tendina con
+	la possibilità di scegliere in che stanza porre la capabilities.
+	stanza modificabile anche nella schermata di visione delle capabilities
+	visibili dalla nodes?
