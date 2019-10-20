@@ -17,15 +17,18 @@ from django.contrib.auth import logout
 #######################################################################################################################
 
 def node_form(request):
-    # NodeFormset=modelformset_factory(models.Node, form=forms.NodeForm)
-    NodeFormset = modelformset_factory(models.Node, form=forms.NodeForm, can_delete=True)
-    if request.method == 'POST':
-        formset = NodeFormset(request.POST)
-        if formset.is_valid():
-            formset.save()
-    else:
-        formset = NodeFormset()
-    return render(request, 'nodes.html', {'formset': formset, "capabilities": models.capabilities})
+	# NodeFormset=modelformset_factory(models.Node, form=forms.NodeForm)
+	NodeFormset = modelformset_factory(models.Node, form=forms.NodeForm, can_delete=True)
+	if request.method == 'POST':
+		formset = NodeFormset(request.POST)
+		if formset.is_valid():
+			instances = formset.save(commit=False)
+			for instance in instances:
+				instance.user = request.user
+				instance.save()
+	else:
+		formset = NodeFormset(queryset = models.Node.objects.filter(user = request.user))
+	return render(request, 'nodes.html', {'formset': formset, "capabilities": models.capabilities})
 
 
 def capability_form(request, node_id, capability):

@@ -11,3 +11,15 @@ idee:
 	la possibilità di scegliere in che stanza porre la capabilities.
 	stanza modificabile anche nella schermata di visione delle capabilities
 	visibili dalla nodes?
+
+
+
+
+{% for form in formset %}
+				<li>
+					{{ form }}
+					{% for cap, detail in capabilities.items %}
+						<a href="{{ form.initial.id }}/{{ cap }}">Edit {{ cap }}</a>
+					{% endfor %}
+				</li>
+			{% endfor %}

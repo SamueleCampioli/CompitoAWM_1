@@ -5,7 +5,8 @@ from . import models
 class NodeForm(ModelForm):
     class Meta:
         model = models.Node
-        fields = ['id', 'name']
+        fields = ['id', 'name', 'user']
+        exclude = ['user']
 
 
 class TapparelleCapabilityForm(ModelForm):

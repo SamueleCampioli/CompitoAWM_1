@@ -18,7 +18,9 @@ from django.urls import include, path
 import RaspNodeConfig.urls
 
 urlpatterns = [
+	path('', include(RaspNodeConfig.urls)),
+	path('complete/google-oauth2/', include(RaspNodeConfig.urls)),
     path('admin/', admin.site.urls),
-    path('nodes/', include(RaspNodeConfig.urls)),
+    #path('nodes/', include(RaspNodeConfig.urls)),
 ]
 

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	 <head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		{% block head %}
+		{% endblock %}
+	</head>
+	<body>
+	{% if user.is_authenticated %}
+		{% csrf_token %}
+		{% block body %}
+		{% endblock %}
+	{% else %}
+		<h1>it looks like you haven't logged in! please, login at this <a class="btn btn-primary" href="http://localhost:8000/"> link </a> </h1>
+	{% endif %}
+	</body>
+</html>
