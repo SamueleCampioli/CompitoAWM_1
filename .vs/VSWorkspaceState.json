@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
+    "",
     "\\DjangoConfig",
     "\\RaspNodeConfig",
-    "\\templates",
-    "\\venv\\lib\\python3.6",
-    "\\venv\\lib\\python3.6\\site-packages"
+    "\\RaspNodeConfig\\migrations",
+    "\\templates"
   ],
+  "SelectedNode": "\\templates\\room.html",
   "PreviewInSolutionExplorer": false
 }

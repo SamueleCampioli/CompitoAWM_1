@@ -8,9 +8,9 @@
 	</head>
 	<body>
 	{% if user.is_authenticated %}
-		{% csrf_token %}
 		{% block body %}
 		{% endblock %}
+		<a class="btn btn-primary" href="{% url 'logout'%}">Logout</a>
 	{% else %}
 		<h1>it looks like you haven't logged in! please, login at this <a class="btn btn-primary" href="http://localhost:8000/"> link </a> </h1>
 	{% endif %}

@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% comment %} nodes page
-{% if form == usr.node %}
 {% endcomment %}
 {% block head %}
     <title>Configuration overview</title>
@@ -28,4 +27,6 @@
 	</ul>
 	<input type="submit" name="save" value="Submit" />
 	</form>
+	<a class="btn btn-primary" href="{% url 'room_form'%}">room view</a>
+	<br />
 {% endblock %}

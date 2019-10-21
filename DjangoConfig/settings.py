@@ -57,7 +57,7 @@ SOCIAL_AUTH__KEY = 'ID'
 SOCIAL_AUTH__SECRET = 'SECRET'
 
 LOGIN_URL = '/auth/login/google-oauth2/'
-LOGIN_REDIRECT_URL = 'nodes/'
+LOGIN_REDIRECT_URL = 'room_form'
 LOGOUT_REDIRECT_URL = '/'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 

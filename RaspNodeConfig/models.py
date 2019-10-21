@@ -2,8 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+class Room(models.Model):
+	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "room", blank = 'TRUE', null = 'TRUE' )
+	name = models.CharField(max_length=40)
+	
+	def __str__(self):
+		return str(self.name)
+
 class Node(models.Model):
-	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "node", null = 'TRUE' )
+	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "node", blank = 'TRUE', null = 'TRUE' )
+	room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name = "node", blank = 'TRUE', null = 'TRUE' )
 	name = models.CharField(max_length=40)
 
 	def __str__(self):
@@ -39,7 +47,7 @@ capabilities={
 
 class GenericCapabilityEntry(models.Model):
     name = models.CharField(max_length=40)
-    node = models.ForeignKey(Node, on_delete=models.CASCADE)
+    node = models.ForeignKey(Node, on_delete=models.CASCADE, related_name = "Cap", blank = 'TRUE', null = 'TRUE' )
     capability = "generic"
 
     def get_topic(self):

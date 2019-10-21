@@ -12,6 +12,7 @@
 {% block body %}
 	<form action="" method="post">
 		{{ formset.management_form }}
+		{% csrf_token %}
 		<ul>
 		{% for form in formset %}
 			<li>
