@@ -74,11 +74,3 @@ def capability_form(request, room_id, node_id, capability):
 		# formset = CapabilityFormset(queryset=model.objects.filter(node__id__exact=node_id))
 		formset = CapabilityFormset(queryset=model.objects.filter(node__exact=node_id))
 	return render(request, 'capabilities.html', {'formset': formset})
-
-def logout_view(request):
-	"Log users out and re-direct them to the main page."
-	logout(request)
-	return HttpResponseRedirect('/')
-
-def index(request):
-	return render(request, 'index2.html')

@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\DjangoConfig",
+    "\\Portal",
+    "\\Portal\\migrations",
     "\\RaspNodeConfig",
-    "\\RaspNodeConfig\\migrations",
     "\\templates"
   ],
-  "SelectedNode": "\\templates\\room.html",
+  "SelectedNode": "\\RaspNodeConfig\\urls.py",
   "PreviewInSolutionExplorer": false
 }
