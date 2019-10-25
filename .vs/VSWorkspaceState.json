@@ -7,6 +7,6 @@
     "\\RaspNodeConfig",
     "\\templates"
   ],
-  "SelectedNode": "\\RaspNodeConfig\\urls.py",
+  "SelectedNode": "\\templates\\base.html",
   "PreviewInSolutionExplorer": false
 }
